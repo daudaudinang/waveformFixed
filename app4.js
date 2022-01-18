@@ -1,5 +1,9 @@
 (async () => {
-    const peaks = await fetch("mediumFile.json").then(response => response.json()).then(json => json.map(one => parseFloat((parseInt(one)/255).toFixed(4))));
+    const peaks = await fetch("mediumFile.json").then(response => response.json()).then(json => json.map(one => {
+        if(one < 3) return parseFloat(((parseInt(one) + 3) /255).toFixed(4));
+        else return parseFloat((parseInt(one)/255).toFixed(4));
+    }
+    ));
     //Create new wavesurfer
     var wavesurfer = WaveSurfer.create({
         container: "#waveform",
