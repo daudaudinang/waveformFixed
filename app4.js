@@ -23,11 +23,11 @@
         waveColor: "rgb(196, 196, 196)",
         responsive: true,
         scrollParent: true,
-        backend: 'MediaElementWebAudio', // Bắt buộc thêm trường này để sử dụng peak nhận từ ngoài vào
+        backend: 'MediaElement', // Bắt buộc thêm trường này để sử dụng peak nhận từ ngoài vào
         });
         
     // ******** Load file
-    wavesurfer.load("mediumFile.m4a", peaks);
+    wavesurfer.load("https://cdn.sohatv.vn/26wnSmONIPfKupN8/lotus/9Ky728veUXcJqDhU/10082647_2022_01_04_9Ky728veUXcJqDhU.m4a", peaks);
 
     //Start playing after song is loaded
     wavesurfer.on("ready", function () {
